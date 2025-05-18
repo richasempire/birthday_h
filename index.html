@@ -9,15 +9,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
   <title>Document</title>
+ 
 </head>
 <body>
+  <audio src="images/Birthday.mp3" autoplay loop hidden></audio>
   <div id="header">
   <h1>Let's celebrate Harshit - on paper 🎉</h1>
   <img id="bff-img" src="images/harshit_1.jpeg" alt="picture">
   <h2 id="bdy-age">Old enough- Irrational fear creeps in</h2>
-  <h4 id="bdy-date">17-06-2025</h4>
+  <h4 id="bdy-date">17-05-2025</h4>
 </div>
-
+<button onclick="document.getElementById('bg-music').play()">▶ Play Birthday Song</button>
+<audio id="bg-music" src="images/Birthday.mp3" loop hidden></audio>
+<audio id="bg-music" src="Birthday.mp3" autoplay loop muted></audio>
+<script>
+  // Try to unmute and play after minimal interaction or a slight delay
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('bg-music');
+    audio.muted = false; // Unmute it
+    audio.play().catch(() => {
+      // Autoplay failed — likely blocked, will need interaction
+      console.log('Autoplay blocked by browser.');
+    });
+  });
+</script>
   <div class="gift-section">
     <h2 class="gift-title">After a tedious conversation, here is me celebrating him 🥳</h2>
     <h3 class="gift-hint">(Hover over the gift)</h3>
